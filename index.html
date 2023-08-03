@@ -15,6 +15,8 @@
             padding-bottom: 200px;
             font-size: 20px;
         }
+
+
         /* Add other CSS styles for headings, paragraphs, etc. as needed */
         h1, h2, h3 {
             color: #333; /* Heading text color */
@@ -26,32 +28,96 @@
         text-decoration: underline;
         text-align: center;
     }
-        /* You can add more styles for other elements as per your requirement */
+ 
+        #topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #FFEB99, white); /* Use linear gradient for the background, from yellow (#FFEB99) to white */
+            padding: 5px;
+            border-radius: 0;
+            z-index: 9999; /* Set a higher z-index to make it go over the other elements */
+        }
+
+        /* CSS style for the links within the top bar */
+        #topbar a {
+            display: inline-block;
+            color: black; /* Set the text color of the links to black */
+            text-decoration: none;
+            font-size: 14px;
+            padding: 5px 10px;
+            margin-right: 10px;
+        }
+
+        /* Add spacing to the content below the top bar */
+        #content {
+
+   Position: relative;
+            padding-top: 40px; /* Adjust this value as needed */
+        }
+
+
+        #topbar a:hover {
+            background-color: #F9C22E; /* Set the background color to a lighter shade of yellow */
+            border-radius: 5px; /* Add some rounded corners for a subtle effect */
+   cursor: pointer;
+        }
+
+
+
+
+ 
     </style>
+
+
+    <script>
+        // JavaScript function to handle smooth scrolling with slower speed
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    </script>
+
+
+
+
 </head>
 
 <body>
+    <!-- Sidebar -->
+    <div id="topbar">
+        <ul>
+            <a   onclick="scrollToSection('viz1690601837560')">Tableau Dashboard</a>
+            <a   onclick="scrollToSection('introduction-section')">Introduction</a>
+            <a   onclick="scrollToSection('data-cleaning-section')">Data Cleaning</a>
+            <a   onclick="scrollToSection('visualizations-section')">The Visualizations</a>
+            <a   onclick="scrollToSection('conclusion-section')">Conclusion</a>
+        </ul>
+    </div>
     <h1>How Salary Is Affected By Socio-Demographic Variables</h1>
-    <div class='tableauPlaceholder' id='viz1690601837560' style='position: relative'><noscript><a href='#'><img alt='Dashboard ' 
-        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;So&#47;Socio-DemographicVariablesandSalary&#47;Dashboard1&#47;1_rss.png' 
-        style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+    <div class='tableauPlaceholder' id='viz1690601837560' style='position: relative'><noscript><a href='#'><img alt='Dashboard '
+        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;So&#47;Socio-DemographicVariablesandSalary&#47;Dashboard1&#47;1_rss.png'
+        style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
             <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Socio-DemographicVariablesandSalary&#47;Dashboard1' />
             <param name='tabs' value='no' /><param name='toolbar' value='yes' />
-            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;So&#47;Socio-DemographicVariablesandSalary&#47;Dashboard1&#47;1.png' /> 
+            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;So&#47;Socio-DemographicVariablesandSalary&#47;Dashboard1&#47;1.png' />
             <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' />
             <param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                
             <script type='text/javascript'>                    var divElement = document.getElementById('viz1690601837560');                    
-            var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) 
-            { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) 
-            { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='1927px';}                     
-            var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                   
+            var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 )
+            { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 )
+            { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='1927px';}                    
+            var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                  
              vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 <p> ***This Dashboard Is Interactable***</p>
-    <h2>Introduction</h2>
+    <h2 id="introduction-section">Introduction</h2>
     <p>Over the past decade, especially in recent years, we have seen a wide variety of factors that have affected a person's salary. Does your degree dictate how much you will make? Or perhaps your experience? Or maybe it's some other factor?</p>
     <p>In this project, I will be using a dataset that focuses on salary and demographic information with additional details on years of experience. This dataset will help us find the relationship of income and various socio-demographic variables. During this project, we will be using LiveSQL, Excel, and Tableau to help us uncover patterns and correlations and shed light on income disparities and socio-economic dynamics.</p>
 
-    <h2>Data Cleaning</h2>
+    <h2 id="data-cleaning-section">Data Cleaning</h2>
     <h3>Introducing and Importing Our Dataset</h3>
     <p>This is a sample from our dataset. This dataset contains around 900 data points that look just like the rows you see below.</p>
     <img src="Images\Datacleaning.jpeg" alt="image_description">
@@ -63,7 +129,7 @@
     <img src="Images\Vlookup.jpeg" alt="image_description">
 
     <p>Once the Excel sheet is updated with the standardized and corrected values, we can proceed with writing the INSERT INTO function once and populate this function for the rest of the data. We will then run this function in LiveSQL to populate the employee_data table with the data points.</p>
-    
+   
 
     <p>Function that will be used to populate the table in LiveSQL:</p>
     <img src="Images\FillFunction.jpeg" alt="image_description">
@@ -84,7 +150,7 @@
     <p>From the sample of the output above, we can see that there are many duplicates. Duplicates exaggerate the data toward a certain value, creating inaccuracy and lowering the integrity of the dataset, which is why we must remove them. To remove the duplicates, we will use the query below:</p>
     <img src="Images\Delete rows.jpeg" alt="image_description">
 
-<h2>The Visualizations</h2>
+<h2 id ="visualizations-section">The Visualizations</h2>
 <h3>Tableau Dashboard</h3>
     <p>By presenting my data in visualizations, I can easily compare and contrast the effects of different socio-demographic variables on salary levels. Using this dashboard, we can analyze the different patterns, correlations, and areas of concern related to salary disparities. This could lead us to make more informed decisions when compensating and increasing the diversity of our workplaces.</p>
 
@@ -96,8 +162,8 @@
 
     <p>Lastly, the "Average Salary By Race" graph helps me investigate whether or not there are any salary differences across racial groups. This graph could potentially shed light on any racial wage gaps that could exist in any country.</p>
 
-<h2>Conclusion</h2>
-<h3>What To Take Away</h3>
+<h2 id = "conclusion-section">Conclusion</h2>
+<h3>The Takeaways</h3>
     <p>In this project, I leveraged my Data Analytics skills to create meaningful information and visualization with a large dataset. I started off by cleaning the data using Excel, making sure it was reliable. Then, I tried out a different method of importing the dataset into LiveSQL, just to learn something new and expand my knowledge. </p>
 
     <p>After getting the dataset in order, I continued my data cleaning and focused on finding and getting rid of any duplicates in LiveSQL. Having clean data was essential for meaningful analysis. With a solid dataset, I went on to create visualizations that showcased how different socio-demographic variables affect salary. </p>
