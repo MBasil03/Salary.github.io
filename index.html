@@ -64,7 +64,28 @@
    cursor: pointer;
         }
 
+        /* Styles for smaller screen sizes */
+        @media screen and (max-width: 600px) {
+            body {
+                font-size: 16px;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
 
+        /* Styles for larger screen sizes */
+        @media screen and (min-width: 1000px) {
+            body {
+                font-size: 20px;
+                padding-left: 200px;
+                padding-right: 200px;
+            }
+
+            #viz1690601837560 object {
+                width: 1000px;
+                height: 827px;
+            }
+        }
 
 
  
