@@ -88,11 +88,11 @@
         }
 
         #viz1690601837560 {
-             
-            
-            left: 17%;
-             
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
         }
+
         .interactable-text {
             text-align: center;
         }
@@ -143,21 +143,28 @@
              vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 <p class="interactable-text"> ***This Dashboard Is Interactable And Is Best Viewed On Desktop***</p>
     <h2 id="introduction-section">Introduction</h2>
-    <p>Over the past decade, especially in recent years, we have seen a wide variety of factors that have affected a person's salary. Does your degree dictate how much you will make? Or perhaps your experience? Or maybe it's some other factor?</p>
-    <p>In this project, I will be using a dataset that focuses on salary and demographic information with additional details on years of experience. This dataset will help us find the relationship of income and various socio-demographic variables. During this project, we will be using LiveSQL, Excel, and Tableau to help us uncover patterns and correlations and shed light on income disparities and socio-economic dynamics.</p>
+    <p>Over the past decade, especially in recent years, we have seen various factors affecting a person's salary. Does your degree dictate how much you will make? Or your experience? 
+        Or it could be some other factor.</p>
+    <p>In this project, I will use a dataset that focuses on salary and demographic information with additional details on years of experience. 
+        This dataset will help us find the relationship between income and various socio-demographic variables. During this project, we will use LiveSQL, Excel, and Tableau to help 
+        us uncover patterns and correlations and shed light on income disparities and socio-economic dynamics.</p>
 
     <h2 id="data-cleaning-section">Data Cleaning</h2>
     <h3>Introducing and Importing Our Dataset</h3>
     <p>This is a sample from our dataset. This dataset contains around 900 data points that look just like the rows you see below.</p>
     <img src="Images\Datacleaning.jpeg" alt="image_description">
 
-    <p>Before we even start working on the data itself, we encounter our very first problem. You cannot upload an excel file directly to LiveSQL to populate a table. Of course we can just use a different platform such as MySQL and SQL Server that accept excel files, but for the sake of learning, we will use LiveSQL to learn how to import data for a different platform. We have to create a table using this query:</p>
+    <p>Before we even start working on the data itself, we encounter our very first problem. You cannot upload an Excel file directly to LiveSQL to populate a table. Of course, we can use a different platform, 
+        such as MySQL and SQL Server, that accepts Excel files, but for learning purposes, we will use LiveSQL to learn how to import data for a different platform. We have to create a table using this query:</p>
     <img src="Images\Createtable.jpeg" alt="image_description">
 
-    <p>To efficiently populate the table in LiveSQL with values from the Excel file, we'll first add an ID column to track each row's uniqueness. Next, we'll address the variations in the Education Level for the same degree by creating a VLOOKUP function in Excel. This function will standardize the Education Level values, ensuring consistency throughout the dataset. Additionally, it will handle the apostrophe issue by adding an extra apostrophe where necessary to avoid any interference with the INSERT INTO clause's syntax.</p>
+    <p>To efficiently populate the table in LiveSQL with values from the Excel file, we'll first add an ID column to track each row's uniqueness. Next, we'll address the variations in the Education Level for 
+        the same degree by creating a VLOOKUP function in Excel. This function will standardize the Education Level values, ensuring consistency throughout the dataset. Additionally, it will handle the apostrophe 
+        issue by adding an extra apostrophe where necessary to avoid any interference with the INSERT INTO clause's syntax.</p>
     <img src="Images\Vlookup.jpeg" alt="image_description">
 
-    <p>Once the Excel sheet is updated with the standardized and corrected values, we can proceed with writing the INSERT INTO function once and populate this function for the rest of the data. We will then run this function in LiveSQL to populate the employee_data table with the data points.</p>
+    <p>Once the Excel sheet has been updated with the standardized and corrected values, we can write the INSERT INTO function once and populate this function for the rest of the data. 
+        We will then run this function in LiveSQL to populate the employee_data table with the data points.</p>
    
 
     <p>Function that will be used to populate the table in LiveSQL:</p>
@@ -167,7 +174,7 @@
     <img src="Images\Originaltable.jpeg" alt="image_description">
 
     <h3>Removing Duplicates</h3>
-    <p>One of my main concerns for this data set is that there was a possibility of duplicate rows. Now that we have imported the data into LiveSQL, we can determine whether or not there are duplicates using the query below:</p>
+    <p>One of my main concerns for this data set is the possibility of duplicate rows. Now that we have imported the data into LiveSQL, we can determine whether or not duplicates are using the query below:</p>
 
     <div class="image-container">
         <img src="Images\removingduplicates.jpeg" alt="Image 1 Description">
@@ -176,28 +183,39 @@
     <div class="image-container">
         <img src="Images\Duplicatesoutput.jpeg" alt="Image 2 Description">
     </div>
-    <p>From the sample of the output above, we can see that there are many duplicates. Duplicates exaggerate the data toward a certain value, creating inaccuracy and lowering the integrity of the dataset, which is why we must remove them. To remove the duplicates, we will use the query below:</p>
+    <p>From the sample of the output above, we can see many duplicates. Duplicates exaggerate the data toward a certain value, creating inaccuracy and lowering the integrity of the dataset, 
+        which is why we must remove them. To remove the duplicates, we will use the query below:</p>
     <img src="Images\Delete rows.jpeg" alt="image_description">
 
 <h2 id ="visualizations-section">The Visualizations</h2>
 <h3>Tableau Dashboard</h3>
-    <p>By presenting my data in visualizations, I can easily compare and contrast the effects of different socio-demographic variables on salary levels. Using this dashboard, we can analyze the different patterns, correlations, and areas of concern related to salary disparities. This could lead us to make more informed decisions when compensating and increasing the diversity of our workplaces.</p>
+    <p>I can easily compare and contrast the effects of different socio-demographic variables on salary levels by presenting my data in visualizations. Using this dashboard, we can analyze the different patterns, 
+        correlations, and areas of concern related to salary disparities. This could lead us to make more informed decisions when compensating and increasing the diversity of our workplaces.</p>
 
-    <p>I chose to create the graphs on this dashboard to investigate the impact of various socio-demographic variables and factors on salary levels within the dataset. The first graph, "Average Salary By Country," enables me to compare the average salary across different countries, which helps identify variations in compensation based on location. The average salaries for each country can also represent the economic status of the country.</p>
+    <p>I created the graphs on this dashboard to investigate the impact of various socio-demographic variables and factors on salary levels within the dataset. The first graph, "Average Salary By Country," 
+        enables me to compare the average salary across different countries, which helps identify variations in compensation based on location. The average wages for each country can also represent the country's 
+        economic status.</p>
 
-    <p>The second graph, "Average Salary By Years of Experience," allows me to explore the relationship between experience and salary. In this graph, I can analyze the expertise of someone working in a certain profession and how much they are being rewarded for their expertise.</p>
+    <p>The second graph, "Average Salary By Years of Experience," allows me to explore the relationship between experience and salary. In this graph, I can analyze the expertise of someone working in a 
+        particular profession and how much they are being rewarded for their expertise.</p>
 
-    <p>In the third graph, "Average Salary By Country Including Gender," I built on my first graph but introduced another variable, gender. This visualization allows me to compare the average salaries across countries while also being able to see if the average salaries in countries vary for different genders.</p>
+    <p>In the third graph, "Average Salary By Country Including Gender," I built on my first graph but introduced another variable, gender. This visualization allows me to compare the average salaries across 
+        countries while also seeing if the average wages in countries vary for different genders.</p>
 
-    <p>Lastly, the "Average Salary By Race" graph helps me investigate whether or not there are any salary differences across racial groups. This graph could potentially shed light on any racial wage gaps that could exist in any country.</p>
+    <p>Lastly, the "Average Salary By Race" graph helps me investigate whether or not there are any salary differences across racial groups. This graph could potentially shed light on any racial wage gaps that 
+        could exist in any country.</p>
 
 <h2 id = "conclusion-section">Conclusion</h2>
 <h3>The Takeaways</h3>
-    <p>In this project, I leveraged my Data Analytics skills to create meaningful information and visualization with a large dataset. I started off by cleaning the data using Excel, making sure it was reliable. Then, I tried out a different method of importing the dataset into LiveSQL, just to learn something new and expand my knowledge. </p>
+    <p>In this project, I leveraged my Data Analytics skills to create meaningful information and visualization with a large dataset. I started by cleaning the data using Excel, ensuring it was reliable. 
+        Then, I tried a different method of importing the dataset into LiveSQL to learn something new and expand my knowledge. </p>
 
-    <p>After getting the dataset in order, I continued my data cleaning and focused on finding and getting rid of any duplicates in LiveSQL. Having clean data was essential for meaningful analysis. With a solid dataset, I went on to create visualizations that showcased how different socio-demographic variables affect salary. </p>
+    <p>After getting the dataset in order, I continued my data cleaning and focused on finding and eliminating any duplicates in LiveSQL. Having clean data was essential for meaningful analysis. 
+        With a solid dataset, I created visualizations that showcased how different socio-demographic variables affect salary. </p>
 
-    <p>All those visualizations were combined together in a Tableau dashboard, making it easy for anyone to explore and analyze how different factors relate to salary. The goal was to give users an interactive experience where they could dig into the data and see the connections between socio-demographic factors and earnings. Throughout this project, I embraced the challenges and took the opportunity to learn new platforms and techniques. </p>
+    <p>All those visualizations were combined in a Tableau dashboard, making it easy for anyone to explore and analyze how different factors relate to salary. The goal was to give users an interactive experience 
+        to dig into the data and see the connections between socio-demographic factors and earnings. Throughout this project, I embraced the challenges and took the opportunity to 
+        learn new platforms and techniques. </p>
 
 </body>
 </html>
